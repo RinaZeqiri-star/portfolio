@@ -4,27 +4,215 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Rina's Portfolio</title>
-		<link rel="stylesheet" href="style.css" />
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			html,
+			body {
+				margin: 0;
+				height: 100%;
+				overflow: hidden;
+			}
+
+			body {
+				font-family: "Segoe UI", Arial, sans-serif;
+			}
+
+			.scene {
+				position: relative;
+				width: 100vw;
+				height: 100vh;
+
+				background-image: url("images/background.png");
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+
+			.portfolio-title {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				text-align: center;
+				z-index: 5;
+				pointer-events: none;
+			}
+
+			.portfolio-title h1 {
+				margin: 0;
+				font-family: "Segoe UI Black", "Arial Black", sans-serif;
+				font-weight: 900;
+				font-size: clamp(32px, 4.2vw, 56px);
+				line-height: 1.05;
+				color: #ffffff;
+				text-shadow:
+					2px 2px 0 #1a1a1a,
+					-2px 2px 0 #1a1a1a,
+					2px -2px 0 #1a1a1a,
+					-2px -2px 0 #1a1a1a,
+					0 6px 14px rgba(0, 0, 0, 0.35);
+			}
+
+			.item-wrap {
+				position: absolute;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				z-index: 3;
+			}
+
+			.item {
+				max-width: 100%;
+				height: auto;
+				filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35));
+			}
+
+			.label {
+				margin-top: 6px;
+				background: #111;
+				color: #fff;
+				font-size: 12px;
+				font-weight: 700;
+				padding: 3px 9px;
+				border-radius: 2px;
+				white-space: nowrap;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+			}
+
+			.pos-headphones {
+				left: 12%;
+				top: 16%;
+				width: 15%;
+				transform: rotate(-6deg);
+			}
+
+			.pos-parfume {
+				left: 32%;
+				top: 6%;
+				width: 8%;
+				transform: rotate(4deg);
+			}
+
+			.pos-mirror {
+				left: 60%;
+				top: 14%;
+				width: 9%;
+				transform: rotate(-3deg);
+			}
+
+			.pos-bag {
+				left: 79%;
+				top: 8%;
+				width: 15%;
+				transform: rotate(8deg);
+				z-index: 4;
+			}
+
+			.pos-keychainfour {
+				left: 86%;
+				top: 4%;
+				width: 6%;
+				transform: rotate(-10deg);
+				z-index: 5;
+			}
+
+			.pos-camera {
+				left: 12%;
+				top: 45%;
+				width: 15%;
+				transform: rotate(-8deg);
+			}
+
+			.pos-wallet {
+				left: 70%;
+				top: 55%;
+				width: 13%;
+				transform: rotate(-4deg);
+			}
+
+			.pos-lipgloss {
+				left: 36%;
+				top: 65%;
+				width: 7%;
+				transform: rotate(10deg);
+			}
+
+			.pos-hairclip {
+				left: 53%;
+				top: 70%;
+				width: 12%;
+				transform: rotate(-6deg);
+			}
+
+			.pos-sunglasses {
+				left: 10%;
+				top: 72%;
+				width: 15%;
+				transform: rotate(-10deg);
+			}
+
+			@media (max-width: 700px) {
+				.label {
+					font-size: 9px;
+					padding: 2px 6px;
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<main class="scene">
-			<!-- Bag sits in the center -->
-			<img src="images/bag.png" alt="Bag" class="item bag" id="bag" />
+			<!-- Title -->
+			<div class="portfolio-title">
+				<h1>Creative<br />Portfolio</h1>
+			</div>
 
-			<!-- Scattered items around the bag -->
-			<img src="images/mirror.png" alt="Mirror" class="item pos-mirror" />
-			<img src="images/hairclip.png" alt="Hair clip" class="item pos-hairclip" />
-			<img src="images/sunglasses.png" alt="Sunglasses" class="item pos-sunglasses" />
-			<img src="images/headphones.png" alt="Headphones" class="item pos-headphones" />
-			<img src="images/wallet.png" alt="Wallet" class="item pos-wallet" />
-			<img src="images/camera.png" alt="Camera" class="item pos-camera" />
-			<img src="images/parfume.png" alt="Perfume" class="item pos-parfume" />
-			<img src="images/lipgloss.png" alt="Lip gloss" class="item pos-lipgloss" />
-			<img src="images/lipglosstwoo.png" alt="Lip gloss" class="item pos-lipglosstwoo" />
-			<img src="images/keychainone.png" alt="Keychain" class="item pos-keychainone" />
-			<img src="images/keychaintwoo.png" alt="Keychain" class="item pos-keychaintwoo" />
-			<img src="images/keychainthree.png" alt="Keychain" class="item pos-keychainthree" />
-			<img src="images/keychainfour.png" alt="Keychain" class="item pos-keychainfour" />
+			<!-- Scattered items around the title -->
+			<div class="item-wrap pos-headphones">
+				<img src="images/headphones.png" alt="Headphones" class="item" />
+				<span class="label">RSL-jazz</span>
+			</div>
+
+			<div class="item-wrap pos-parfume">
+				<img src="images/parfume.png" alt="Perfume" class="item" />
+				<span class="label">IL-Basilico</span>
+			</div>
+
+			<div class="item-wrap pos-mirror">
+				<img src="images/mirror.png" alt="Mirror" class="item" />
+				<span class="label">Video editing</span>
+			</div>
+
+			<div class="item-wrap pos-keychainfour">
+				<img src="images/keychainfour.png" alt="Keychain" class="item" />
+			</div>
+
+			<div class="item-wrap pos-camera">
+				<img src="images/camera.png" alt="Camera" class="item" />
+				<span class="label">Mono</span>
+			</div>
+
+			<div class="item-wrap pos-wallet">
+				<img src="images/wallet.png" alt="Wallet" class="item" />
+				<span class="label">Deniza website</span>
+			</div>
+
+			<div class="item-wrap pos-lipgloss">
+				<img src="images/lipgloss.png" alt="Lip gloss" class="item" />
+				<span class="label">Afroton</span>
+			</div>
+
+			<div class="item-wrap pos-hairclip">
+				<img src="images/hairclip.png" alt="Hair clip" class="item" />
+				<span class="label">Untangel</span>
+			</div>
+
+			<div class="item-wrap pos-sunglasses">
+				<img src="images/sunglasses.png" alt="Sunglasses" class="item" />
+				<span class="label">Multi lens</span>
+			</div>
 		</main>
 	</body>
 </html>

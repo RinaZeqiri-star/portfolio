@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Word Search Grid</title>
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-height: 100vh;
+				margin: 0;
+				background: #fff;
+				font-family: Georgia, "Times New Roman", serif;
+			}
+
+			.frame {
+				border: 1px dashed #999;
+				padding: 30px;
+			}
+
+			.grid-wrap {
+				position: relative;
+				display: inline-block;
+			}
+
+			.grid {
+				display: grid;
+				grid-template-columns: repeat(7, 70px);
+				grid-template-rows: repeat(7, 70px);
+				position: relative;
+			}
+
+			.cell {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 34px;
+				z-index: 1;
+			}
+
+			/* Box overlays */
+			.box {
+				position: relative;
+				z-index: 2;
+				border: 3px solid #000;
+				border-radius: 14px;
+				pointer-events: none;
+				align-self: center;
+				justify-self: center;
+			}
+
+			/* small dots at box corners, like the hand-drawn marks */
+			.box::before,
+			.box::after {
+				content: "";
+				position: absolute;
+				width: 6px;
+				height: 6px;
+				background: #000;
+				border-radius: 50%;
+			}
+			.box::before {
+				top: -3px;
+				right: -3px;
+			}
+			.box::after {
+				bottom: -3px;
+				left: -3px;
+			}
+
+			.box-tall {
+				width: 46px;
+				grid-row: span 5;
+			}
+
+			.box-wide {
+				height: 46px;
+				grid-column: span 2;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="frame">
+			<div class="grid-wrap">
+				<div class="grid">
+					<!-- Row 1 -->
+					<div class="cell" style="grid-column: 1; grid-row: 1">r</div>
+					<div class="cell" style="grid-column: 2; grid-row: 1">v</div>
+					<div class="cell" style="grid-column: 3; grid-row: 1">j</div>
+					<div class="cell" style="grid-column: 4; grid-row: 1">n</div>
+					<div class="cell" style="grid-column: 5; grid-row: 1">d</div>
+					<div class="cell" style="grid-column: 6; grid-row: 1">z</div>
+					<div class="cell" style="grid-column: 7; grid-row: 1">c</div>
+
+					<!-- Row 2 -->
+					<div class="cell" style="grid-column: 1; grid-row: 2">c</div>
+					<div class="cell" style="grid-column: 2; grid-row: 2">i</div>
+					<div class="cell" style="grid-column: 3; grid-row: 2">d</div>
+					<div class="cell" style="grid-column: 4; grid-row: 2">b</div>
+					<div class="cell" style="grid-column: 5; grid-row: 2">m</div>
+					<div class="cell" style="grid-column: 6; grid-row: 2">i</div>
+					<div class="cell" style="grid-column: 7; grid-row: 2">f</div>
+
+					<!-- Row 3 -->
+					<div class="cell" style="grid-column: 1; grid-row: 3">l</div>
+					<div class="cell" style="grid-column: 2; grid-row: 3">d</div>
+					<div class="cell" style="grid-column: 3; grid-row: 3">y</div>
+					<div class="cell" style="grid-column: 4; grid-row: 3">k</div>
+					<div class="cell" style="grid-column: 5; grid-row: 3">h</div>
+					<div class="cell" style="grid-column: 6; grid-row: 3">u</div>
+					<div class="cell" style="grid-column: 7; grid-row: 3">w</div>
+
+					<!-- Row 4 -->
+					<div class="cell" style="grid-column: 1; grid-row: 4">f</div>
+					<div class="cell" style="grid-column: 2; grid-row: 4">e</div>
+					<div class="cell" style="grid-column: 3; grid-row: 4">x</div>
+					<div class="cell" style="grid-column: 4; grid-row: 4">p</div>
+					<div class="cell" style="grid-column: 5; grid-row: 4">a</div>
+					<div class="cell" style="grid-column: 6; grid-row: 4">x</div>
+					<div class="cell" style="grid-column: 7; grid-row: 4">g</div>
+
+					<!-- Row 5 -->
+					<div class="cell" style="grid-column: 1; grid-row: 5">a</div>
+					<div class="cell" style="grid-column: 2; grid-row: 5">d</div>
+					<div class="cell" style="grid-column: 3; grid-row: 5">a</div>
+					<div class="cell" style="grid-column: 4; grid-row: 5">t</div>
+					<div class="cell" style="grid-column: 5; grid-row: 5">i</div>
+					<div class="cell" style="grid-column: 6; grid-row: 5">u</div>
+					<div class="cell" style="grid-column: 7; grid-row: 5">z</div>
+
+					<!-- Row 6 -->
+					<div class="cell" style="grid-column: 1; grid-row: 6">y</div>
+					<div class="cell" style="grid-column: 2; grid-row: 6">r</div>
+					<div class="cell" style="grid-column: 3; grid-row: 6">c</div>
+					<div class="cell" style="grid-column: 4; grid-row: 6">w</div>
+					<div class="cell" style="grid-column: 5; grid-row: 6">e</div>
+					<div class="cell" style="grid-column: 6; grid-row: 6">r</div>
+					<div class="cell" style="grid-column: 7; grid-row: 6">p</div>
+
+					<!-- Row 7 -->
+					<div class="cell" style="grid-column: 1; grid-row: 7">g</div>
+					<div class="cell" style="grid-column: 2; grid-row: 7">p</div>
+					<div class="cell" style="grid-column: 3; grid-row: 7">o</div>
+					<div class="cell" style="grid-column: 4; grid-row: 7">3</div>
+					<div class="cell" style="grid-column: 5; grid-row: 7">d</div>
+					<div class="cell" style="grid-column: 6; grid-row: 7">t</div>
+					<div class="cell" style="grid-column: 7; grid-row: 7">w</div>
+
+					<!-- Box overlays -->
+					<div class="box box-tall" style="grid-column: 2; grid-row: 1 / 6"></div>
+					<div class="box box-tall" style="grid-column: 6; grid-row: 2 / 7"></div>
+					<div class="box box-wide" style="grid-column: 4 / 6; grid-row: 7"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
