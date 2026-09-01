@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>IL Basilico</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				margin: 0;
+				min-height: 100vh;
+				display: flex;
+				justify-content: center;
+				background: #ffffff;
+				font-family: "Helvetica Neue", Arial, sans-serif;
+				padding: 60px 20px;
+			}
+
+			.project-page {
+				width: 100%;
+				max-width: 1000px;
+				color: #111;
+			}
+
+			.project-page h1 {
+				text-align: center;
+				font-size: 34px;
+				font-weight: 800;
+				margin-bottom: 30px;
+			}
+
+			.project-page .description {
+				font-size: 16px;
+				line-height: 1.7;
+				color: #333;
+				max-width: 850px;
+				margin: 0 auto 50px auto;
+			}
+
+			.section-label {
+				font-size: 18px;
+				font-weight: 600;
+				color: #111;
+				margin: 0 0 16px 0;
+			}
+
+			.section {
+				margin-bottom: 60px;
+			}
+
+			.row-one img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+
+			.row-two {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 24px;
+			}
+
+			.row-two img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+
+			.logo-wrap img {
+				max-width: 320px;
+				height: auto;
+				display: block;
+			}
+
+			.back-to-top {
+				display: block;
+				text-align: center;
+				margin-top: 40px;
+				color: #b98b6b;
+				text-decoration: none;
+				font-size: 15px;
+			}
+
+			.back-to-top:hover {
+				text-decoration: underline;
+			}
+
+			.back-home {
+				display: inline-block;
+				margin-bottom: 30px;
+				color: #333;
+				text-decoration: none;
+				font-size: 15px;
+			}
+
+			.back-home:hover {
+				color: #000;
+				text-decoration: underline;
+			}
+
+			@media (max-width: 700px) {
+				.row-two {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
+	</head>
+	<body id="top">
+		<div class="project-page">
+			<a class="back-home" href="home.html">&larr; Back to Home</a>
+
+			<h1>IL Basilico</h1>
+
+			<p class="description">This was a multi part project where I worked on the rebranding of an Italian restaurant in Roeselare. First I worked on the logo, and after that came the website, menu card, and also a new visite card.</p>
+
+			<!-- Logo -->
+			<div class="section">
+				<p class="section-label">Logo:</p>
+				<div class="logo-wrap">
+					<img src="images/IL1.png" alt="IL Basilico logo" />
+				</div>
+			</div>
+
+			<!-- Visite card -->
+			<div class="section">
+				<p class="section-label">Visite card:</p>
+				<div class="row-two">
+					<img src="images/IL2.png" alt="IL Basilico visite card front" />
+					<img src="images/IL3.png" alt="IL Basilico visite card back" />
+				</div>
+			</div>
+
+			<!-- Menu -->
+			<div class="section">
+				<p class="section-label">Menu:</p>
+				<div class="row-two">
+					<img src="images/IL4.png" alt="IL Basilico menu page 1" />
+					<img src="images/IL5.png" alt="IL Basilico menu page 2" />
+				</div>
+			</div>
+
+			<!-- Website -->
+			<div class="section">
+				<p class="section-label">Website:</p>
+				<div class="row-one">
+					<img src="images/IL6.png" alt="IL Basilico website design" />
+				</div>
+			</div>
+
+			<a class="back-to-top" href="#top">&uarr; Back to Top</a>
+		</div>
+	</body>
+</html>

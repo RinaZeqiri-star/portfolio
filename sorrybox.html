@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>SorryBox</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				margin: 0;
+				min-height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: #1c1c1c;
+				font-family: "Helvetica Neue", Arial, sans-serif;
+				padding: 60px 20px;
+			}
+
+			.project-page {
+				width: 100%;
+				max-width: 1100px;
+				color: #f2f2f2;
+			}
+
+			.project-page h1 {
+				text-align: center;
+				font-size: 42px;
+				font-weight: 800;
+				letter-spacing: 2px;
+				margin-bottom: 40px;
+			}
+
+			.project-page .description {
+				font-size: 16px;
+				line-height: 1.7;
+				color: #d9d9d9;
+				max-width: 900px;
+				margin: 0 auto 24px auto;
+			}
+
+			.project-page .software-used {
+				font-size: 16px;
+				color: #d9d9d9;
+				max-width: 900px;
+				margin: 0 auto 40px auto;
+			}
+
+			.software-used strong {
+				color: #fff;
+			}
+
+			.figma-link {
+				display: block;
+				width: fit-content;
+				margin: 0 auto 50px auto;
+				background: #ffffff;
+				color: #111;
+				font-weight: 700;
+				font-size: 15px;
+				text-decoration: none;
+				padding: 14px 32px;
+				border-radius: 30px;
+			}
+
+			.figma-link:hover {
+				background: #e6e6e6;
+			}
+
+			/* --- Image gallery --- */
+			.gallery {
+				display: flex;
+				flex-direction: column;
+				gap: 4px;
+			}
+
+			.row-one img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+
+			.row-two {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 4px;
+			}
+
+			.row-two img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+
+			.caption {
+				font-size: 14px;
+				font-style: italic;
+				color: #b5b5b5;
+				margin: 10px 0 0 0;
+				line-height: 1.6;
+			}
+
+			.section-label {
+				font-size: 15px;
+				color: #d9d9d9;
+				margin: 40px 0 4px 0;
+			}
+
+			.back-to-top {
+				display: block;
+				text-align: center;
+				margin-top: 50px;
+				color: #b98b6b;
+				text-decoration: none;
+				font-size: 15px;
+			}
+
+			.back-to-top:hover {
+				text-decoration: underline;
+			}
+
+			.back-home {
+				display: inline-block;
+				margin-bottom: 30px;
+				color: #d9d9d9;
+				text-decoration: none;
+				font-size: 15px;
+			}
+
+			.back-home:hover {
+				color: #fff;
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body id="top">
+		<div class="project-page">
+			<a class="back-home" href="home.html">&larr; Back to Home</a>
+
+			<h1>SorryBox</h1>
+
+			<p class="description">This semester, I worked on a group project where we redesigned the Sorry Box website, a platform that helps kids explore different ways to say sorry.</p>
+
+			<p class="software-used"><strong>Used software:</strong> Figma &amp; Illustrator</p>
+
+			<a class="figma-link" href="https://www.figma.com/design/EJlC5upjlBnC583lLB5mbS/Wireframe-sorrybox?node-id=219-100&p=f" target="_blank" rel="noopener">Figma link</a>
+
+			<div class="gallery">
+				<!-- Moodboard collage -->
+				<div class="row-one">
+					<img src="images/SO1.png" alt="Gaming concept moodboard" />
+				</div>
+				<p class="caption">My gaming concept was chosen by my group based on my mood board. From there, we collaborated to develop a new concept and design, combining our ideas to create a fresh and engaging experience.</p>
+
+				<!-- Homepage hero -->
+				<div class="row-one" style="margin-top: 30px">
+					<img src="images/SO2.png" alt="SorryBox homepage hero" />
+				</div>
+
+				<!-- Homepage continued: what SorryBox can do + partners -->
+				<div class="row-one">
+					<img src="images/SO3.png" alt="SorryBox homepage features and partners" />
+				</div>
+
+				<!-- App flow: choose how to say sorry / choose a sticker -->
+				<div class="row-two">
+					<img src="images/SO4.png" alt="Choose how you want to say sorry screen" />
+					<img src="images/SO5.png" alt="Choose a sticker screen" />
+				</div>
+
+				<!-- App flow: choose origami / customize -->
+				<div class="row-two">
+					<img src="images/SO6.png" alt="Choose an origami screen" />
+					<img src="images/SO7.png" alt="Customize screen" />
+				</div>
+
+				<!-- Key images -->
+				<p class="section-label">Key images</p>
+				<div class="row-one">
+					<img src="images/SO8.png" alt="Key images strip" />
+				</div>
+
+				<!-- Lifestyle photos -->
+				<div class="row-two">
+					<img src="images/SO9.png" alt="SorryBox lifestyle photo 1" />
+					<img src="images/SO10.png" alt="SorryBox lifestyle photo 2" />
+				</div>
+			</div>
+
+			<a class="back-to-top" href="#top">&uarr; Back to Top</a>
+		</div>
+	</body>
+</html>

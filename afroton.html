@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Afroton</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				margin: 0;
+				min-height: 100vh;
+				display: flex;
+				justify-content: center;
+				background: #ffffff;
+				font-family: "Helvetica Neue", Arial, sans-serif;
+				padding: 60px 20px;
+			}
+
+			.project-page {
+				width: 100%;
+				max-width: 1000px;
+				color: #111;
+			}
+
+			.project-page h1 {
+				text-align: center;
+				font-size: 34px;
+				font-weight: 800;
+				margin-bottom: 30px;
+			}
+
+			.project-page .description {
+				font-size: 16px;
+				line-height: 1.7;
+				color: #333;
+				max-width: 850px;
+				margin: 0 auto 50px auto;
+			}
+
+			.section-label {
+				font-size: 18px;
+				font-weight: 600;
+				color: #111;
+				margin: 0 0 16px 0;
+			}
+
+			.section {
+				margin-bottom: 60px;
+			}
+
+			.row-one img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+
+			.row-two {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 24px;
+			}
+
+			.row-three {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				gap: 24px;
+			}
+
+			.row-two img,
+			.row-three img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+
+			.back-to-top {
+				display: block;
+				text-align: center;
+				margin-top: 40px;
+				color: #b98b6b;
+				text-decoration: none;
+				font-size: 15px;
+			}
+
+			.back-to-top:hover {
+				text-decoration: underline;
+			}
+
+			.back-home {
+				display: inline-block;
+				margin-bottom: 30px;
+				color: #333;
+				text-decoration: none;
+				font-size: 15px;
+			}
+
+			.back-home:hover {
+				color: #000;
+				text-decoration: underline;
+			}
+
+			@media (max-width: 700px) {
+				.row-two,
+				.row-three {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
+	</head>
+	<body id="top">
+		<div class="project-page">
+			<a class="back-home" href="home.html">&larr; Back to Home</a>
+
+			<h1>Afroton</h1>
+
+			<p class="description">My internship had a festival called Afroton, and I had a lot of projects to do with them, from posters to social media posts and so much more.</p>
+
+			<!-- Festival posters -->
+			<div class="section">
+				<p class="section-label">Festival posters</p>
+				<div class="row-three">
+					<img src="images/POSTER1.jpg" alt="Afroton festival poster 1" />
+					<img src="images/POSTER2.jpeg" alt="Afroton festival poster 2" />
+					<img src="images/POSTER3.png" alt="Afroton festival poster 3" />
+				</div>
+			</div>
+
+			<!-- Personal poster -->
+			<div class="section">
+				<p class="section-label">Personal poster</p>
+				<div class="row-two">
+					<img src="images/POSTER4.jpeg" alt="TJ West personal poster" />
+					<img src="images/POSTER5.jpeg" alt="TJ West QR code poster" />
+				</div>
+			</div>
+
+			<!-- Website gallery page -->
+			<div class="section">
+				<p class="section-label">Website gallery page</p>
+				<div class="row-one">
+					<img src="images/WEBSITE.png" alt="Afroton website gallery page" />
+				</div>
+			</div>
+
+			<!-- Social media post -->
+			<div class="section">
+				<p class="section-label">Social media post</p>
+				<div class="row-three">
+					<img src="images/INSTA1.jpg" alt="Afroton Instagram post 1" />
+					<img src="images/INSTA2.jpg" alt="Afroton Instagram post 2" />
+					<img src="images/INSTA3.jpg" alt="Afroton Instagram post 3" />
+				</div>
+			</div>
+
+			<a class="back-to-top" href="#top">&uarr; Back to Top</a>
+		</div>
+	</body>
+</html>

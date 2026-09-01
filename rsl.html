@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>RSL Jazz Logos</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				margin: 0;
+				min-height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: #ffffff;
+				font-family: "Helvetica Neue", Arial, sans-serif;
+				padding: 60px 20px;
+			}
+
+			.project-page {
+				width: 100%;
+				max-width: 1000px;
+				color: #111;
+			}
+
+			.project-page h1 {
+				text-align: center;
+				font-size: 34px;
+				font-weight: 800;
+				margin-bottom: 30px;
+			}
+
+			.project-page .description {
+				font-size: 16px;
+				line-height: 1.7;
+				color: #333;
+				max-width: 850px;
+				margin: 0 auto 60px auto;
+			}
+
+			/* --- Logo gallery --- */
+			.gallery {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				gap: 60px 40px;
+				align-items: center;
+				justify-items: center;
+			}
+
+			.gallery img {
+				max-width: 100%;
+				max-height: 200px;
+				height: auto;
+				display: block;
+			}
+
+			.back-to-top {
+				display: block;
+				text-align: center;
+				margin-top: 60px;
+				color: #b98b6b;
+				text-decoration: none;
+				font-size: 15px;
+			}
+
+			.back-to-top:hover {
+				text-decoration: underline;
+			}
+
+			.back-home {
+				display: inline-block;
+				margin-bottom: 30px;
+				color: #333;
+				text-decoration: none;
+				font-size: 15px;
+			}
+
+			.back-home:hover {
+				color: #000;
+				text-decoration: underline;
+			}
+
+			@media (max-width: 700px) {
+				.gallery {
+					grid-template-columns: 1fr 1fr;
+					gap: 40px 20px;
+				}
+			}
+		</style>
+	</head>
+	<body id="top">
+		<div class="project-page">
+			<a class="back-home" href="home.html">&larr; Back to Home</a>
+
+			<h1>RSL JAZZ logos</h1>
+
+			<p class="description">During my internship, I had the privilege of experimenting with various logo designs for RSL JAZZ, they wanted a warm, friendly look with a touch of class, which I sought to capture in my designs.</p>
+
+			<div class="gallery">
+				<img src="images/RSL1.png" alt="RSL Jazz logo concept 1" />
+				<img src="images/RSL2.png" alt="RSL Jazz logo concept 2" />
+				<img src="images/RSL3.png" alt="RSL Jazz logo concept 3" />
+				<img src="images/RSL4.png" alt="RSL Jazz logo concept 4" />
+				<img src="images/RSL5.png" alt="RSL Jazz logo concept 5" />
+				<img src="images/RSL6.png" alt="RSL Jazz logo concept 6" />
+			</div>
+
+			<a class="back-to-top" href="#top">&uarr; Back to Top</a>
+		</div>
+	</body>
+</html>
