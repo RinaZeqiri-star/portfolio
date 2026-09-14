@@ -1,90 +1,558 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="nl">
 	<head>
 		<meta charset="UTF-8" />
-		<title>Deniza Miftari</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Deniza Mifrati</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
 		<style>
 			* {
+				margin: 0;
+				padding: 0;
 				box-sizing: border-box;
 			}
 
 			body {
-				margin: 0;
-				min-height: 100vh;
-				display: flex;
-				justify-content: center;
-				background: #ffffff;
-				font-family: "Helvetica Neue", Arial, sans-serif;
-				padding: 60px 20px;
-			}
-
-			.project-page {
-				width: 100%;
-				max-width: 1000px;
+				background-color: #fefaf3;
+				font-family: "Poppins", Arial, sans-serif;
 				color: #111;
 			}
 
-			.project-page h1 {
-				text-align: center;
-				font-size: 34px;
+			/* =========================
+           WHOLE PAGE
+        ========================= */
+
+			.page {
+				margin: 30px;
+			}
+
+			/* =========================
+           TOP
+        ========================= */
+
+			.intro {
+				min-height: 390px;
+
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+
+				padding: 20px 45px;
+			}
+
+			.intro-text {
+				width: 28%;
+			}
+
+			.intro-text h1 {
+				color: #d7433d;
+
+				font-size: 50px;
+				line-height: 1;
 				font-weight: 800;
-				margin-bottom: 30px;
+
+				margin-bottom: 15px;
 			}
 
-			.project-page .description {
-				font-size: 16px;
-				line-height: 1.7;
-				color: #333;
-				max-width: 850px;
-				margin: 0 auto 50px auto;
+			.intro-text h3 {
+				color: #d7433d;
+
+				font-size: 14px;
+				font-weight: 600;
+
+				margin-bottom: 45px;
 			}
 
-			.row-one img {
+			.software p,
+			.website p {
+				color: #d7433d;
+
+				font-size: 13px;
+				font-weight: 600;
+
+				margin-bottom: 5px;
+			}
+
+			.software span {
+				display: block;
+
+				font-size: 13px;
+			}
+
+			.website {
+				margin-top: 25px;
+			}
+
+			/* LAPTOP */
+
+			.laptop {
+				width: 63%;
+			}
+
+			.laptop img {
 				width: 100%;
-				height: auto;
 				display: block;
 			}
 
-			.back-to-top {
+			/* =========================
+           STORY + DESIGN ELEMENTS
+        ========================= */
+
+			.story-section {
+				display: grid;
+
+				grid-template-columns: 2fr 1fr;
+			}
+
+			/* RED STORY BOX */
+
+			.story {
+				background-color: #d7433d;
+
+				color: white;
+
+				min-height: 360px;
+
+				padding: 75px 55px;
+
+				display: grid;
+
+				grid-template-columns: 28% 72%;
+			}
+
+			.story h2 {
+				font-size: 27px;
+				line-height: 1.15;
+			}
+
+			.story-text {
+				font-size: 12px;
+				line-height: 1.5;
+
+				max-width: 560px;
+			}
+
+			.story-text p {
+				margin-bottom: 20px;
+			}
+
+			/* DESIGN ELEMENTS */
+
+			.design-elements {
+				padding: 30px 65px;
+			}
+
+			.design-elements h2 {
+				color: #d7433d;
+
+				font-size: 30px;
+				line-height: 1.1;
+
+				margin-bottom: 35px;
+			}
+
+			.design-elements h4 {
+				color: #d7433d;
+
+				font-size: 12px;
+
+				margin-bottom: 12px;
+			}
+
+			/* COLORS */
+
+			.colors {
+				display: flex;
+
+				gap: 15px;
+
+				margin-bottom: 38px;
+			}
+
+			.color {
+				width: 45px;
+				height: 45px;
+			}
+
+			.cream {
+				background-color: #f9e8ca;
+			}
+
+			.red {
+				background-color: #e54842;
+			}
+
+			.white {
+				background-color: white;
+
+				border: 1px solid #333;
+			}
+
+			/* TYPOGRAPHY */
+
+			.fonts {
+				display: flex;
+
+				gap: 40px;
+
+				align-items: flex-end;
+			}
+
+			.big-font {
+				font-size: 48px;
+				font-weight: 700;
+			}
+
+			.normal-font {
+				font-size: 40px;
+				font-weight: 400;
+			}
+
+			.fonts p {
+				font-size: 13px;
+
+				margin-top: 5px;
+			}
+
+			/* =========================
+           MIDDLE IMAGE SECTION
+        ========================= */
+
+			.work-section {
+				display: grid;
+
+				grid-template-columns: 1fr 1fr 1fr;
+
+				min-height: 360px;
+			}
+
+			/* LEFT TEXT */
+
+			.work-intro {
+				display: flex;
+
+				align-items: center;
+
+				padding: 50px;
+			}
+
+			.work-intro p {
+				font-size: 14px;
+				font-weight: 500;
+
+				line-height: 1.5;
+			}
+
+			/* CENTER IMAGE */
+
+			.work-image {
+				width: 100%;
+				height: 100%;
+			}
+
+			.work-image img {
+				width: 100%;
+				height: 100%;
+
+				object-fit: cover;
+
 				display: block;
-				text-align: center;
-				margin-top: 40px;
-				color: #b98b6b;
-				text-decoration: none;
-				font-size: 15px;
 			}
 
-			.back-to-top:hover {
-				text-decoration: underline;
+			/* RIGHT TEXT */
+
+			.work-description {
+				background-color: white;
+
+				padding: 65px 40px;
+
+				color: #999;
 			}
 
-			.back-home {
-				display: inline-block;
-				margin-bottom: 30px;
-				color: #333;
-				text-decoration: none;
-				font-size: 15px;
+			.work-description p {
+				font-size: 12px;
+
+				line-height: 1.45;
 			}
 
-			.back-home:hover {
-				color: #000;
-				text-decoration: underline;
+			.work-description strong {
+				color: #777;
+			}
+
+			/* =========================
+           BOTTOM RED SECTION
+        ========================= */
+
+			.bottom-section {
+				background-color: #d7433d;
+
+				min-height: 390px;
+
+				display: flex;
+
+				justify-content: space-between;
+
+				padding: 65px 90px;
+
+				color: white;
+			}
+
+			/* TEXT SIDE */
+
+			.bottom-text {
+				width: 50%;
+			}
+
+			.bottom-text h2 {
+				font-size: 38px;
+
+				margin-bottom: 25px;
+			}
+
+			.bottom-text p {
+				font-size: 14px;
+
+				line-height: 1.6;
+			}
+
+			/* BOTTOM IMAGE */
+
+			.bottom-image {
+				width: 42%;
+			}
+
+			.bottom-image img {
+				width: 100%;
+				height: 100%;
+
+				max-height: 300px;
+
+				object-fit: cover;
+			}
+
+			/* =========================
+           DEN3
+        ========================= */
+
+			.den3 {
+				margin-top: 30px;
+			}
+
+			.den3 img {
+				width: 100%;
+				display: block;
+			}
+
+			/* =========================
+           RESPONSIVE
+        ========================= */
+
+			@media (max-width: 900px) {
+				.page {
+					margin: 15px;
+				}
+
+				.intro {
+					flex-direction: column;
+
+					align-items: flex-start;
+
+					padding: 30px;
+				}
+
+				.intro-text {
+					width: 100%;
+
+					margin-bottom: 30px;
+				}
+
+				.laptop {
+					width: 100%;
+				}
+
+				.story-section {
+					grid-template-columns: 1fr;
+				}
+
+				.story {
+					grid-template-columns: 1fr;
+
+					gap: 30px;
+				}
+
+				.design-elements {
+					padding: 40px;
+				}
+
+				.work-section {
+					grid-template-columns: 1fr;
+				}
+
+				.work-image {
+					height: 400px;
+				}
+
+				.work-description {
+					padding: 40px;
+				}
+
+				.bottom-section {
+					flex-direction: column;
+
+					gap: 40px;
+
+					padding: 50px;
+				}
+
+				.bottom-text,
+				.bottom-image {
+					width: 100%;
+				}
 			}
 		</style>
 	</head>
-	<body id="top">
-		<div class="project-page">
-			<a class="back-home" href="home.html">&larr; Back to Home</a>
 
-			<h1>Deniza Miftari</h1>
+	<body>
+		<main class="page">
+			<!-- TOP SECTION -->
 
-			<p class="description">On Deniza's website I worked on one of the website pages where I had to rework the design they already had.</p>
+			<section class="intro">
+				<div class="intro-text">
+					<h1>
+						DENIZA<br />
+						MIFRATI
+					</h1>
 
-			<div class="row-one">
-				<img src="images/DE1.png" alt="Deniza Miftari website page redesign" />
-			</div>
+					<h3>UX/UI / GRAPHIC DESIGN</h3>
 
-			<a class="back-to-top" href="#top">&uarr; Back to Top</a>
-		</div>
+					<div class="software">
+						<p>Software used:</p>
+
+						<span>Wordpress</span>
+						<span>Canva</span>
+					</div>
+
+					<div class="website">
+						<p>Link to website:</p>
+					</div>
+				</div>
+
+				<div class="laptop">
+					<img src="laptop1.png" alt="Laptop" />
+				</div>
+			</section>
+
+			<!-- STORY + DESIGN ELEMENTS -->
+
+			<section class="story-section">
+				<div class="story">
+					<h2>
+						MIJN<br />
+						VERHAAL
+					</h2>
+
+					<div class="story-text">
+						<p>Alles begint bij mijn persoonlijk verhaal. Ik werd geboren in Kosovo tijdens een periode van oorlog en kwam als kind naar België.</p>
+
+						<p>Als jonge vrouw met een migratieachtergrond heb ik persoonlijk ervaren waar er drempels liggen en welke blikken er vaak zijn. Zowel op organisatieniveau als in de brede maatschappij.</p>
+
+						<p>
+							Deze ervaringen hebben mij niet beperkt, maar net versterkt in mijn overtuiging:
+							<strong>“Iedereen heeft baat bij inclusie.”</strong>
+							<br />
+							Een diverse en inclusieve omgeving is niet alleen ethisch juist, maar creëert ook meetbare waarde voor organisaties en de hele samenleving.
+						</p>
+					</div>
+				</div>
+
+				<div class="design-elements">
+					<h2>
+						DESIGN<br />
+						ELEMENTS
+					</h2>
+
+					<h4>COLOR SCHEEM</h4>
+
+					<div class="colors">
+						<div class="color cream"></div>
+
+						<div class="color red"></div>
+
+						<div class="color white"></div>
+					</div>
+
+					<h4>TYPOGRAPHY</h4>
+
+					<div class="fonts">
+						<div>
+							<span class="big-font"> Aa </span>
+
+							<p>Poppins bold</p>
+						</div>
+
+						<div>
+							<span class="normal-font"> Aa </span>
+
+							<p>Poppins</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- MIDDLE IMAGE + TEXT -->
+
+			<section class="work-section">
+				<div class="work-intro">
+					<p>On Deniza’s website I worked on one of the website pages where I had to rework the design they already had</p>
+				</div>
+
+				<div class="work-image">
+					<img src="DEN1.png" alt="Deniza" />
+				</div>
+
+				<div class="work-description">
+					<p>
+						Vanuit deze persoonlijke reis groeide mijn professionele missie: werk maken van een inclusieve samenleving.
+
+						<br /><br />
+
+						Ik begeleid organisaties/scholen om drempels te herkennen, inzicht te verwerven in verschillende referentiekaders en samen te bouwen aan een cultuur waar verschillen worden gewaardeerd.
+
+						<br /><br />
+
+						Daarnaast begeleid ik thema’s als
+						<strong>identiteitsontwikkeling</strong>
+						bij jongeren met
+						<strong>migratieachtergrond</strong>
+						en breng ik graag mijn getuigenis tijdens keynotes of in gastcolleges.
+					</p>
+				</div>
+			</section>
+
+			<!-- BOTTOM RED AREA -->
+
+			<section class="bottom-section">
+				<div class="bottom-text">
+					<h2>Contact</h2>
+
+					<p>Heb je een vraag of wil je graag samenwerken? Neem gerust contact op.</p>
+				</div>
+
+				<div class="bottom-image">
+					<img src="DEN2.png" alt="Deniza" />
+				</div>
+			</section>
+
+			<!-- DEN3 IMAGE -->
+
+			<section class="den3">
+				<img src="DEN3.png" alt="Deniza" />
+			</section>
+		</main>
 	</body>
 </html>

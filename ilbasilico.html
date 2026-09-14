@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>IL Basilico</title>
 		<style>
 			* {
@@ -10,66 +11,288 @@
 
 			body {
 				margin: 0;
-				min-height: 100vh;
-				display: flex;
-				justify-content: center;
+				font-family: "Georgia", "Times New Roman", serif;
+				color: #2b2b21;
 				background: #ffffff;
-				font-family: "Helvetica Neue", Arial, sans-serif;
-				padding: 60px 20px;
 			}
 
-			.project-page {
-				width: 100%;
-				max-width: 1000px;
-				color: #111;
+			a {
+				color: inherit;
 			}
 
-			.project-page h1 {
-				text-align: center;
-				font-size: 34px;
-				font-weight: 800;
-				margin-bottom: 30px;
-			}
-
-			.project-page .description {
-				font-size: 16px;
-				line-height: 1.7;
-				color: #333;
-				max-width: 850px;
-				margin: 0 auto 50px auto;
-			}
-
-			.section-label {
-				font-size: 18px;
-				font-weight: 600;
-				color: #111;
-				margin: 0 0 16px 0;
-			}
-
-			.section {
-				margin-bottom: 60px;
-			}
-
-			.row-one img {
-				width: 100%;
-				height: auto;
+			.back-home {
 				display: block;
+				padding: 16px 24px;
+				color: #8a9a5b;
+				text-decoration: none;
+				font-size: 13px;
+				font-weight: 600;
+				font-family: "Helvetica Neue", Arial, sans-serif;
 			}
 
-			.row-two {
+			.back-home:hover {
+				text-decoration: underline;
+			}
+
+			/* ===== ROW 1: Intro + Mugs ===== */
+			.row1 {
+				display: grid;
+				grid-template-columns: 1fr 1.1fr;
+			}
+
+			.intro-cell {
+				padding: 50px 45px;
+				font-family: "Helvetica Neue", Arial, sans-serif;
+			}
+
+			.intro-cell img.logo {
+				max-width: 260px;
+				height: auto;
+				margin-bottom: 18px;
+			}
+
+			.intro-cell .tag {
+				font-size: 13px;
+				font-weight: 700;
+				letter-spacing: 1px;
+				color: #8a9a5b;
+				margin: 0 0 24px 0;
+			}
+
+			.intro-cell .label {
+				font-size: 13px;
+				font-weight: 700;
+				color: #8a9a5b;
+				margin: 0 0 4px 0;
+			}
+
+			.intro-cell .value {
+				font-size: 14px;
+				margin: 0 0 22px 0;
+				line-height: 1.5;
+			}
+
+			.intro-cell .description {
+				font-size: 14px;
+				line-height: 1.6;
+				color: #2b2b21;
+			}
+
+			.mugs-cell {
+				position: relative;
+				background: #8a9a5b;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 20px;
+				padding: 50px 30px;
+				overflow: hidden;
+			}
+
+			.mugs-cell::before,
+			.mugs-cell::after {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				height: 18px;
+				background: repeating-linear-gradient(90deg, #f3ecd8 0px, #f3ecd8 20px, #8a9a5b 20px, #8a9a5b 40px);
+			}
+
+			.mugs-cell::before {
+				top: 0;
+			}
+			.mugs-cell::after {
+				bottom: 0;
+			}
+
+			.mugs-cell img {
+				max-height: 300px;
+				width: auto;
+				object-fit: contain;
+				filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.25));
+			}
+
+			/* ===== ROW 2: Visite card + Design elements ===== */
+			.row2 {
 				display: grid;
 				grid-template-columns: 1fr 1fr;
-				gap: 24px;
 			}
 
-			.row-two img {
+			.visitcard-cell {
+				padding: 0;
+			}
+
+			.visitcard-cell img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				display: block;
+			}
+
+			.design-cell {
+				padding: 60px 50px;
+			}
+
+			.design-cell h2 {
+				font-family: "Helvetica Neue", Arial, sans-serif;
+				font-size: 32px;
+				font-weight: 800;
+				color: #8a9a5b;
+				line-height: 1.1;
+				margin: 0 0 34px 0;
+			}
+
+			.design-cell h3 {
+				font-family: "Helvetica Neue", Arial, sans-serif;
+				font-size: 13px;
+				font-weight: 700;
+				letter-spacing: 0.5px;
+				color: #8a9a5b;
+				margin: 0 0 14px 0;
+			}
+
+			.color-swatches {
+				display: flex;
+				gap: 12px;
+				margin-bottom: 40px;
+			}
+
+			.swatch {
+				width: 55px;
+				height: 55px;
+			}
+
+			.swatch.red {
+				background: #c0392b;
+			}
+			.swatch.olive {
+				background: #8a9a5b;
+			}
+			.swatch.cream {
+				background: #f3ecd8;
+				border: 1px solid #ccc;
+			}
+			.swatch.grey {
+				background: #b7b3a3;
+			}
+			.swatch.darkgreen {
+				background: #3f4f40;
+			}
+			.swatch.white {
+				background: #ffffff;
+				border: 1px solid #333;
+			}
+
+			.type-samples {
+				display: flex;
+				gap: 30px;
+				align-items: flex-end;
+			}
+
+			.type-sample .Aa {
+				font-size: 46px;
+				line-height: 1;
+				color: #2b2b21;
+			}
+
+			.type-sample.bold .Aa {
+				font-size: 52px;
+			}
+
+			.type-sample .caption {
+				margin-top: 8px;
+				font-family: "Helvetica Neue", Arial, sans-serif;
+				font-size: 13px;
+				color: #444;
+			}
+
+			/* ===== ROW 3: Placeholder text + Menu ===== */
+			.row3 {
+				display: grid;
+				grid-template-columns: 0.6fr 1fr;
+				border-top: 1px solid #ddd;
+			}
+
+			.placeholder-cell {
+				padding: 60px 40px;
+				font-family: "Helvetica Neue", Arial, sans-serif;
+				font-size: 15px;
+				line-height: 1.6;
+				color: #333;
+				border-right: 1px solid #ddd;
+			}
+
+			.menu-cell {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 4px;
+				padding: 40px;
+			}
+
+			.menu-cell img {
 				width: 100%;
 				height: auto;
 				display: block;
 			}
 
-			.logo-wrap img {
-				max-width: 320px;
+			/* ===== ROW 4: Ons verhaal ===== */
+			.row4 {
+				display: grid;
+				grid-template-columns: 1fr 1.2fr;
+			}
+
+			.verhaal-photo img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				display: block;
+			}
+
+			.verhaal-text {
+				background: #3f4f40;
+				color: #f3ecd8;
+				padding: 60px 60px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			.verhaal-text h2 {
+				font-size: 32px;
+				font-weight: 700;
+				margin: 0 0 24px 0;
+				letter-spacing: 1px;
+			}
+
+			.verhaal-text p {
+				font-family: "Helvetica Neue", Arial, sans-serif;
+				font-size: 15px;
+				line-height: 1.7;
+				margin: 0;
+			}
+
+			/* ===== ROW 5: Menu highlights + Design elements 2 ===== */
+			.row5 {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				border-top: 1px solid #ddd;
+			}
+
+			.highlights-cell {
+				padding: 0;
+				border-right: 1px solid #ddd;
+			}
+
+			.highlights-cell img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+
+			/* ===== ROW 6: Bottom map/contact photo ===== */
+			.row6 img {
+				width: 100%;
 				height: auto;
 				display: block;
 			}
@@ -77,79 +300,139 @@
 			.back-to-top {
 				display: block;
 				text-align: center;
-				margin-top: 40px;
-				color: #b98b6b;
+				padding: 24px 0;
+				color: #8a9a5b;
 				text-decoration: none;
-				font-size: 15px;
+				font-size: 14px;
+				font-family: "Helvetica Neue", Arial, sans-serif;
+				border-top: 1px solid #ddd;
 			}
 
 			.back-to-top:hover {
 				text-decoration: underline;
 			}
 
-			.back-home {
-				display: inline-block;
-				margin-bottom: 30px;
-				color: #333;
-				text-decoration: none;
-				font-size: 15px;
-			}
-
-			.back-home:hover {
-				color: #000;
-				text-decoration: underline;
-			}
-
-			@media (max-width: 700px) {
-				.row-two {
+			@media (max-width: 900px) {
+				.row1,
+				.row2,
+				.row3,
+				.row4,
+				.row5 {
 					grid-template-columns: 1fr;
+				}
+				.menu-cell {
+					grid-template-columns: 1fr;
+				}
+				.placeholder-cell,
+				.highlights-cell {
+					border-right: none;
 				}
 			}
 		</style>
 	</head>
 	<body id="top">
-		<div class="project-page">
-			<a class="back-home" href="home.html">&larr; Back to Home</a>
+		<a class="back-home" href="home.html">&larr; Back to Home</a>
 
-			<h1>IL Basilico</h1>
+		<!-- ROW 1: Intro + Mugs -->
+		<div class="row1">
+			<div class="intro-cell">
+				<img class="logo" src="images/ilbasilico-logo.png" alt="IL Basilico logo" />
+				<p class="tag">UXUI / WEBSITE DESIGN / LOGO</p>
 
-			<p class="description">This was a multi part project where I worked on the rebranding of an Italian restaurant in Roeselare. First I worked on the logo, and after that came the website, menu card, and also a new visite card.</p>
+				<p class="label">Software used:</p>
+				<p class="value">Wordpress<br />Ilustrator</p>
 
-			<!-- Logo -->
-			<div class="section">
-				<p class="section-label">Logo:</p>
-				<div class="logo-wrap">
-					<img src="images/IL1.png" alt="IL Basilico logo" />
-				</div>
+				<p class="description">This was a multi parts project where i worked on the rebranding of a italian restaurant in roeselare, first i worked on the logo and after that came the website, menu card and also new visite card.</p>
 			</div>
 
-			<!-- Visite card -->
-			<div class="section">
-				<p class="section-label">Visite card:</p>
-				<div class="row-two">
-					<img src="images/IL2.png" alt="IL Basilico visite card front" />
-					<img src="images/IL3.png" alt="IL Basilico visite card back" />
-				</div>
+			<div class="mugs-cell">
+				<img src="images/basilico1.png" alt="IL Basilico branded mug 1" />
+				<img src="images/basilico2.png" alt="IL Basilico branded mug 2" />
 			</div>
-
-			<!-- Menu -->
-			<div class="section">
-				<p class="section-label">Menu:</p>
-				<div class="row-two">
-					<img src="images/IL4.png" alt="IL Basilico menu page 1" />
-					<img src="images/IL5.png" alt="IL Basilico menu page 2" />
-				</div>
-			</div>
-
-			<!-- Website -->
-			<div class="section">
-				<p class="section-label">Website:</p>
-				<div class="row-one">
-					<img src="images/IL6.png" alt="IL Basilico website design" />
-				</div>
-			</div>
-
-			<a class="back-to-top" href="#top">&uarr; Back to Top</a>
 		</div>
+
+		<!-- ROW 2: Visite card + Design elements -->
+		<div class="row2">
+			<div class="visitcard-cell">
+				<img src="images/basilicovisiteccards.png" alt="IL Basilico visite card collage" />
+			</div>
+
+			<div class="design-cell">
+				<h2>DESIGN<br />ELEMENTS</h2>
+
+				<h3>COLOR SCHEEM</h3>
+				<div class="color-swatches">
+					<div class="swatch red"></div>
+					<div class="swatch olive"></div>
+					<div class="swatch cream"></div>
+				</div>
+
+				<h3>TYPOGROPHY</h3>
+				<div class="type-samples">
+					<div class="type-sample bold">
+						<div class="Aa">Aa</div>
+						<div class="caption">Didot LT Pro</div>
+					</div>
+					<div class="type-sample">
+						<div class="Aa">Aa</div>
+						<div class="caption">Bodoni MT</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ROW 3: Placeholder text + Menu -->
+		<div class="row3">
+			<div class="placeholder-cell">Some tekst hier about the visual indentity im not sure what but smth smth smth hier pls</div>
+
+			<div class="menu-cell">
+				<img src="images/IL4.png" alt="IL Basilico menu page 1" />
+				<img src="images/IL5.png" alt="IL Basilico menu page 2" />
+			</div>
+		</div>
+
+		<!-- ROW 4: Ons verhaal -->
+		<div class="row4">
+			<div class="verhaal-photo">
+				<img src="images/basilico-onsverhaal.png" alt="Colosseum and restaurant table photos" />
+			</div>
+		</div>
+
+		<!-- ROW 5: Menu highlights + Design elements 2 -->
+		<div class="row5">
+			<div class="highlights-cell">
+				<img src="images/basilico-menuhighlights.png" alt="Menu highlights section" />
+			</div>
+
+			<div class="design-cell">
+				<h2>DESIGN<br />ELEMENTS</h2>
+
+				<h3>COLOR SCHEEM</h3>
+				<div class="color-swatches">
+					<div class="swatch grey"></div>
+					<div class="swatch darkgreen"></div>
+					<div class="swatch white"></div>
+				</div>
+
+				<h3>TYPOGROPHY</h3>
+				<div class="type-samples">
+					<div class="type-sample bold">
+						<div class="Aa">Aa</div>
+						<div class="caption">Didot LT Pro</div>
+					</div>
+					<div class="type-sample">
+						<div class="Aa">Aa</div>
+						<div class="caption">Bodoni MT</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ROW 6: Bottom map / contact / street photo -->
+		<div class="row6">
+			<img src="images/basilico-maps.png" alt="Location map, contact details, and restaurant storefront" />
+		</div>
+
+		<a class="back-to-top" href="#top">&uarr; Back to Top</a>
 	</body>
 </html>

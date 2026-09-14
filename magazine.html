@@ -12,11 +12,12 @@
 				margin: 0;
 				min-height: 100vh;
 				display: flex;
+				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-				background: #ffff;
+				background: #ffffff;
 				font-family: "Helvetica Neue", Arial, sans-serif;
-				padding: 60px 20px;
+				padding: 40px 20px;
 			}
 
 			.magazine-page {
@@ -52,38 +53,76 @@
 				color: #231f21;
 			}
 
-			/* --- Image gallery --- */
-			.gallery {
-				display: flex;
-				flex-direction: column;
-				gap: 4px;
+			.back-home {
+				display: inline-block;
+				margin-bottom: 30px;
+				color: #999;
+				text-decoration: none;
+				font-size: 15px;
 			}
 
-			.row-two {
+			.back-home:hover {
+				color: #333;
+				text-decoration: underline;
+			}
+
+			/* --- Flip viewer --- */
+			.viewer {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.spread {
 				display: grid;
 				grid-template-columns: 1fr 1fr;
 				gap: 4px;
+				width: 100%;
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 			}
 
-			.row-three {
-				display: grid;
-				grid-template-columns: 1fr 1fr 1fr;
-				gap: 4px;
-			}
-
-			.gallery img {
+			.spread img {
 				width: 100%;
 				height: 100%;
 				display: block;
 				object-fit: cover;
+				aspect-ratio: 210 / 297;
 			}
 
-			.row-two img {
-				aspect-ratio: 3 / 4;
+			.controls {
+				display: flex;
+				align-items: center;
+				gap: 30px;
+				margin-top: 24px;
 			}
 
-			.row-three img {
-				aspect-ratio: 3 / 4;
+			.nav-btn {
+				background: none;
+				border: none;
+				cursor: pointer;
+				font-size: 28px;
+				line-height: 1;
+				color: #111;
+				padding: 8px 14px;
+				transition:
+					opacity 0.15s ease,
+					transform 0.15s ease;
+			}
+
+			.nav-btn:hover:not(:disabled) {
+				transform: scale(1.15);
+			}
+
+			.nav-btn:disabled {
+				opacity: 0.25;
+				cursor: default;
+			}
+
+			.page-counter {
+				font-size: 14px;
+				color: #666;
+				min-width: 70px;
+				text-align: center;
 			}
 
 			.back-to-top {
@@ -96,19 +135,6 @@
 			}
 
 			.back-to-top:hover {
-				text-decoration: underline;
-			}
-
-			.back-home {
-				display: inline-block;
-				margin-bottom: 30px;
-				color: #d9d9d9;
-				text-decoration: none;
-				font-size: 15px;
-			}
-
-			.back-home:hover {
-				color: #fff;
 				text-decoration: underline;
 			}
 		</style>
@@ -125,29 +151,68 @@
 
 			<p class="software-used"><strong>Used software:</strong> InDesign</p>
 
-			<div class="gallery">
-				<!-- Cover spread: MA1 + MA2 -->
-				<div class="row-two">
-					<img src="images/MA1.png" alt="Magazine cover photo" />
-					<img src="images/MA2.png" alt="Magazine table of contents" />
+			<div class="viewer">
+				<div class="spread" id="spread">
+					<img id="page-left" src="images/MA1.png" alt="Magazine page" />
+					<img id="page-right" src="images/MA2.png" alt="Magazine page" />
 				</div>
 
-				<!-- Row 2: MA3, MA4, MA5 -->
-				<div class="row-three">
-					<img src="images/MA3.png" alt="About me page" />
-					<img src="images/MA4.png" alt="My hobbies page" />
-					<img src="images/MA5.png" alt="My inspiration page" />
-				</div>
-
-				<!-- Row 3: MA6, MA7, MA8 -->
-				<div class="row-three">
-					<img src="images/MA6.png" alt="My style page" />
-					<img src="images/MA7.png" alt="My creative work page" />
-					<img src="images/MA8.png" alt="Into the new world page" />
+				<div class="controls">
+					<button class="nav-btn" id="prev-btn" aria-label="Previous spread">&larr;</button>
+					<span class="page-counter" id="page-counter">1 / 4</span>
+					<button class="nav-btn" id="next-btn" aria-label="Next spread">&rarr;</button>
 				</div>
 			</div>
 
 			<a class="back-to-top" href="#top">&uarr; Back to Top</a>
 		</div>
+
+		<script>
+			// Each entry is one two-page spread: [left image, right image]
+			const spreads = [
+				["images/MA1.png", "images/MA2.png"],
+				["images/MA3.png", "images/MA4.png"],
+				["images/MA5.png", "images/MA6.png"],
+				["images/MA7.png", "images/MA8.png"],
+			];
+
+			let current = 0;
+
+			const leftImg = document.getElementById("page-left");
+			const rightImg = document.getElementById("page-right");
+			const counter = document.getElementById("page-counter");
+			const prevBtn = document.getElementById("prev-btn");
+			const nextBtn = document.getElementById("next-btn");
+
+			function render() {
+				leftImg.src = spreads[current][0];
+				rightImg.src = spreads[current][1];
+				counter.textContent = current + 1 + " / " + spreads.length;
+				prevBtn.disabled = current === 0;
+				nextBtn.disabled = current === spreads.length - 1;
+			}
+
+			prevBtn.addEventListener("click", function () {
+				if (current > 0) {
+					current--;
+					render();
+				}
+			});
+
+			nextBtn.addEventListener("click", function () {
+				if (current < spreads.length - 1) {
+					current++;
+					render();
+				}
+			});
+
+			// Optional: allow left/right arrow keys to flip pages too
+			document.addEventListener("keydown", function (e) {
+				if (e.key === "ArrowLeft") prevBtn.click();
+				if (e.key === "ArrowRight") nextBtn.click();
+			});
+
+			render();
+		</script>
 	</body>
 </html>

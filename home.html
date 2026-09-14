@@ -62,11 +62,31 @@
 				flex-direction: column;
 				align-items: center;
 				z-index: 3;
+				text-decoration: none;
+				cursor: pointer;
+				transition: transform 0.15s ease;
+			}
+
+			.item-wrap:hover {
+				transform: scale(1.06) rotate(0deg) !important;
+				z-index: 10;
+			}
+
+			.item-image-box {
+				width: 100%;
+				height: 9vw;
+				max-height: 130px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 			}
 
 			.item {
 				max-width: 100%;
+				max-height: 100%;
+				width: auto;
 				height: auto;
+				object-fit: contain;
 				filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35));
 			}
 
@@ -84,44 +104,36 @@
 
 			.pos-headphones {
 				left: 12%;
-				top: 16%;
+				top: 14%;
 				width: 15%;
 				transform: rotate(-6deg);
 			}
 
 			.pos-parfume {
 				left: 32%;
-				top: 6%;
+				top: 4%;
 				width: 8%;
 				transform: rotate(4deg);
 			}
 
 			.pos-mirror {
 				left: 60%;
-				top: 14%;
+				top: 10%;
 				width: 9%;
 				transform: rotate(-3deg);
 			}
 
-			.pos-bag {
-				left: 79%;
-				top: 8%;
-				width: 15%;
-				transform: rotate(8deg);
-				z-index: 4;
-			}
-
 			.pos-keychainfour {
-				left: 86%;
+				left: 84%;
 				top: 4%;
-				width: 6%;
+				width: 8%;
 				transform: rotate(-10deg);
 				z-index: 5;
 			}
 
 			.pos-camera {
 				left: 12%;
-				top: 45%;
+				top: 48%;
 				width: 15%;
 				transform: rotate(-8deg);
 			}
@@ -135,21 +147,21 @@
 
 			.pos-lipgloss {
 				left: 36%;
-				top: 65%;
+				top: 62%;
 				width: 7%;
 				transform: rotate(10deg);
 			}
 
 			.pos-hairclip {
 				left: 53%;
-				top: 70%;
+				top: 68%;
 				width: 12%;
 				transform: rotate(-6deg);
 			}
 
 			.pos-sunglasses {
 				left: 10%;
-				top: 72%;
+				top: 76%;
 				width: 15%;
 				transform: rotate(-10deg);
 			}
@@ -158,6 +170,9 @@
 				.label {
 					font-size: 9px;
 					padding: 2px 6px;
+				}
+				.item-image-box {
+					height: 60px;
 				}
 			}
 		</style>
@@ -169,50 +184,69 @@
 				<h1>Creative<br />Portfolio</h1>
 			</div>
 
-			<!-- Scattered items around the title -->
-			<div class="item-wrap pos-headphones">
-				<img src="images/headphones.png" alt="Headphones" class="item" />
+			<!-- Scattered items around the title, each linking to its project page -->
+			<a href="rsl.html" class="item-wrap pos-headphones">
+				<div class="item-image-box">
+					<img src="images/headphones.png" alt="Headphones" class="item" />
+				</div>
 				<span class="label">RSL-jazz</span>
-			</div>
+			</a>
 
-			<div class="item-wrap pos-parfume">
-				<img src="images/parfume.png" alt="Perfume" class="item" />
+			<a href="ilbasilico.html" class="item-wrap pos-parfume">
+				<div class="item-image-box">
+					<img src="images/parfume.png" alt="Perfume" class="item" />
+				</div>
 				<span class="label">IL-Basilico</span>
-			</div>
+			</a>
 
-			<div class="item-wrap pos-mirror">
-				<img src="images/mirror.png" alt="Mirror" class="item" />
+			<a href="video.html" class="item-wrap pos-mirror">
+				<div class="item-image-box">
+					<img src="images/mirror.png" alt="Mirror" class="item" />
+				</div>
 				<span class="label">Video editing</span>
-			</div>
+			</a>
 
-			<div class="item-wrap pos-keychainfour">
-				<img src="images/keychainfour.png" alt="Keychain" class="item" />
-			</div>
+			<a href="3d.html" class="item-wrap pos-keychainfour">
+				<div class="item-image-box">
+					<img src="images/keychainfour.png" alt="Keychain" class="item" />
+				</div>
+				<span class="label">3D</span>
+			</a>
 
-			<div class="item-wrap pos-camera">
-				<img src="images/camera.png" alt="Camera" class="item" />
+			<a href="mono.html" class="item-wrap pos-camera">
+				<div class="item-image-box">
+					<img src="images/camera.png" alt="Camera" class="item" />
+				</div>
 				<span class="label">Mono</span>
-			</div>
+			</a>
 
-			<div class="item-wrap pos-wallet">
-				<img src="images/wallet.png" alt="Wallet" class="item" />
+			<a href="deniza.html" class="item-wrap pos-wallet">
+				<div class="item-image-box">
+					<img src="images/wallet.png" alt="Wallet" class="item" />
+				</div>
 				<span class="label">Deniza website</span>
-			</div>
+			</a>
 
-			<div class="item-wrap pos-lipgloss">
-				<img src="images/lipgloss.png" alt="Lip gloss" class="item" />
+			<a href="afroton.html" class="item-wrap pos-lipgloss">
+				<div class="item-image-box">
+					<img src="images/lipgloss.png" alt="Lip gloss" class="item" />
+				</div>
 				<span class="label">Afroton</span>
-			</div>
+			</a>
 
-			<div class="item-wrap pos-hairclip">
-				<img src="images/hairclip.png" alt="Hair clip" class="item" />
-				<span class="label">Untangel</span>
-			</div>
+			<a href="magazine.html" class="item-wrap pos-hairclip">
+				<div class="item-image-box">
+					<img src="images/hairclip.png" alt="Hair clip" class="item" />
+				</div>
+				<span class="label">Magazine</span>
+			</a>
 
-			<div class="item-wrap pos-sunglasses">
-				<img src="images/sunglasses.png" alt="Sunglasses" class="item" />
+			<a href="multilens.html" class="item-wrap pos-sunglasses">
+				<div class="item-image-box">
+					<img src="images/sunglasses.png" alt="Sunglasses" class="item" />
+				</div>
 				<span class="label">Multi lens</span>
-			</div>
+			</a>
 		</main>
 	</body>
 </html>
